@@ -1,0 +1,110 @@
+using System;
+
+namespace IzaApp
+{
+
+    class MatrixView
+    {
+        int userNumber = 0;
+        int endValue = 0;
+
+        public void GeUserNumber()
+        {
+            Console.WriteLine("Type a number, and then press Enter");
+            userNumber = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void CheckNumberCondition(int number)
+        {
+            bool condition;
+
+            if (number == userNumber)
+            {
+                condition = true;
+                SetEndValue();
+
+                //System.Console.WriteLine(number);
+            }
+            else
+            {
+                condition = false;
+            }
+        }
+
+        public void CheckNumberCondition2(int number)
+        {
+            bool condition;
+
+            if (number < userNumber)
+            {
+                condition = true;
+                AddEndValue(number);
+
+                //System.Console.WriteLine(number);
+            }
+            else
+            {
+                condition = false;
+            }
+        }
+
+        public void CheckNumberCondition3(int number)
+        {
+            bool condition;
+
+            if (number < userNumber)
+            {
+                condition = true;
+                SetEndValue();
+
+                //System.Console.WriteLine(number);
+            }
+            else
+            {
+                condition = false;
+            }
+        }
+
+        public void SetEndValue()
+        {
+            endValue++;
+        }
+
+        public void AddEndValue(int number)
+        {
+            endValue = endValue + number;
+        }
+
+        public int getEndValue()
+        {
+            return endValue;
+        }
+
+    }
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int[,] matrixExample = new int[,] { { 1, 2, 2 }, { 4, 5, 2 }, { 7, 8, 9 }, { 2, 11, 12 } };
+
+            MatrixView mx = new MatrixView();
+
+            mx.GeUserNumber();
+
+
+            for (int i = 0; i < matrixExample.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrixExample.GetLength(1); j++)
+                {
+                    mx.CheckNumberCondition3(matrixExample[i, j]);
+
+                    //System.Console.WriteLine(matrixExample[i,j]);
+                }
+            }
+
+            Console.WriteLine("Ilość znalezionych liczb zgodnych z warunkiem: " + mx.getEndValue());
+        }
+    }
+}
