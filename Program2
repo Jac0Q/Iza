@@ -70,6 +70,8 @@ namespace IzaApp
 
             matrixExample = mx.GetNewMatrix();
 
+            System.Console.WriteLine("Elements in the matrix after sorting:");
+
             for (int i = 0; i < matrixExample.GetLength(0); i++)
             {
                 for (int j = 0; j < matrixExample.GetLength(1); j++)
