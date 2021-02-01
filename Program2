@@ -6,7 +6,6 @@ namespace IzaApp
 
     class MatrixView
     {
-        int endValue = 0;
         int matrixRows = 0;
         int matrixColums = 0;
         ArrayList numbersList = new ArrayList();
